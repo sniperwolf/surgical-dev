@@ -1,60 +1,102 @@
-# Surgical Dev Extension
+<p align="center">
+  <img src="assets/logo.png" width="337" alt="surgical-dev logo"/>
+</p>
 
-A Gemini CLI extension to enforce **software engineering standards**: Surgical precision, senior pragmatism, and goal-driven execution.
+<h1 align="center">surgical-dev</h1>
 
-## Why Use This?
+<p align="center">
+  <strong>surgical-level precision. surgical-level pragmatism. Zero-bloat engineering.</strong>
+</p>
 
-Sometimes AI coding agents are **"too helpful."** This often manifests as:
-1. **Drive-by Refactoring:** Changing quote styles, docstrings, or formatting in lines unrelated to the task.
-2. **Speculative Over-engineering:** Adding "just-in-case" configuration or complex abstractions for simple logic.
-3. **Hidden Guessing:** Implementing an interpretation of a vague request without asking for clarification.
-4. **Fixing without Reproducing:** Changing code to fix a bug before proving the bug exists with a failing test.
+<p align="center">
+  <a href="https://github.com/sniperwolf/surgical-dev-extension/stargazers"><img src="https://img.shields.io/github/stars/sniperwolf/surgical-dev-extension?style=flat&color=yellow" alt="Stars"></a>
+  <a href="https://github.com/sniperwolf/surgical-dev-extension/commits/main"><img src="https://img.shields.io/github/last-commit/sniperwolf/surgical-dev-extension?style=flat" alt="Last Commit"></a>
+  <a href="https://github.com/sniperwolf/surgical-dev-extension/issues"><img src="https://img.shields.io/github/issues/sniperwolf/surgical-dev-extension?style=flat&color=brightgreen" alt="Issues"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/sniperwolf/surgical-dev-extension?style=flat&color=blue" alt="License"></a>
+  <a href="https://geminicli.com"><img src="https://img.shields.io/badge/Gemini%20CLI-Extension-orange?style=flat" alt="Gemini CLI"></a>
+</p>
 
-This extension handle these behaviors.
+<p align="center">
+  <a href="#the-problem">The Problem</a> •
+  <a href="#operational-features">Features</a> •
+  <a href="#how-to-use">Workflow</a> •
+  <a href="#installation">Install</a>
+</p>
+
+---
+
+A Gemini CLI extension that transforms the model into a **disciplined, surgical engineer.** 
+
+Inspired by *[Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876)* on LLM coding pitfalls, **surgical-dev** enforces a strict behavioral layer that prioritizes minimal diffs, existing style preservation, and goal-driven verification.
+
+AI coding agents are sometime **"too helpful"**: they refactor unrelated code, add speculative abstractions, and fix bugs without reproduction.
+
+## The Problem
+
+<table>
+<tr>
+<td width="50%">
+
+### 🗣️ "Too Helpful" AI
+
+> "I've fixed the bug in `auth.ts`. I also took the liberty of updating the deprecated API calls in three adjacent functions, reformatted the whole file from single to double quotes for consistency, and added a new `ConfigManager` class in case you want to add more providers later."
+
+</td>
+<td width="50%">
+
+### 🔪 surgical-dev (Disciplined)
+
+> "Fixed the bug in `auth.ts`. Changed 2 lines only. Verified with new test case."
+
+</td>
+</tr>
+</table>
+
+**Minimal diffs. Zero noise. Maximum impact.**
 
 ## Operational Features
 
-- **Dense Context (`GEMINI.md`)**: High-density instructions for minimal token overhead in every turn.
-- **Audit Command (`/surgical:audit`)**: Reviews your proposed strategy or latest diff for over-engineering or non-surgical changes.
-- **Reviewer Sub-agent (`surgical-reviewer`)**: Delegate code reviews to a specialist who enforces surgical precision without cluttering the main history.
-- **Agent Skill (`surgical-standards`)**: Manually activate for a deep "behavioral reset" during complex tasks. (≈500 tokens)
+| Feature            | What it do                                                       | Trigger                             |
+|--------------------|------------------------------------------------------------------|-------------------------------------|
+| **Dense Context**  | High-density rules in `GEMINI.md` for minimal token overhead.    | Automatic                           |
+| **Audit Command**  | Reviews your plan/diff for over-engineering or scope creep.      | `/surgical:audit`                   |
+| **Reviewer Agent** | Delegate strict code reviews to a surgical specialist sub-agent. | `gemini delegate surgical-reviewer` |
+| **Surgical Skill** | Deep "behavioral reset" for complex tasks. (≈500 tokens)         | `Activate surgical-standards`       |
 
-## How to Use the Surgical Dev Workflow
+## How to Use
 
-### 1. The Strategy Audit (`/surgical:audit`)
-**When:** After the model proposes a plan, but before you say "Go."
-**How:** Type `/surgical:audit`.
-**Why:** It forces the model to review its own proposal for **Scope Creep** (refactoring a whole file for a 1-line fix) and **Speculative Bloat** (adding abstractions you didn't ask for).
+Follow this workflow to maintain surgical-level discipline in every session.
 
-### 2. The Surgical Reviewer (`gemini delegate surgical-reviewer`)
-**When:** You've finished a task and want to ensure no "noise" (style changes, unrelated edits) leaked into the diff.
-**How:** Run:
-```bash
-gemini delegate surgical-reviewer "Review my last changes in src/utils.ts"
-```
-**Why:** This sub-agent has zero tolerance for non-surgical edits. It will flag quote changes, unnecessary classes, and missing verification steps.
+### 1. Strategy Audit (`/surgical:audit`)
+**When:** After the model proposes a plan, but before you say "Go."  
+**Why:** Forces the model to review its own proposal for **Scope Creep** (refactoring a whole file for a 1-line fix) and **Speculative Bloat** (adding abstractions you didn't ask for).
 
-### 3. The Behavioral Reset (`Activate surgical-standards`)
-**When:** The model is "looping," getting confused, or producing overly complex code.
-**How:** Type `Activate surgical-standards skill`.
-**Why:** This loads the full, detailed standards into the active context. Use this as an "emergency brake" to return the model to a pragmatic, surgical mindset.
+### 2. Surgical Reviewer (`gemini delegate surgical-reviewer`)
+**When:** You've finished a task and want to ensure no "noise" leaked into the diff.  
+**Why:** This sub-agent has zero tolerance for non-surgical edits. It will flag quote changes, unnecessary classes, and missing verification steps in its own lean context.
+
+### 3. Behavioral Reset (`Activate surgical-standards`)
+**When:** The model is "looping," getting confused, or producing overly complex code.  
+**Why:** Loads the full, detailed standards as an "emergency brake" to return the model to a pragmatic, surgical mindset.
 
 ### 4. Continuous Enforcement (`GEMINI.md`)
-**When:** Every single turn.
-**How:** Automatic.
-**Why:** The `GEMINI.md` provides a background constraint, reminding the model to reproduce bugs before fixing them, minimize code length, and remove orphans (imports/vars).
+**When:** Every single turn.  
+**Why:** Provides a background constraint, reminding the model to reproduce bugs before fixing them and remove orphans (imports/vars) instantly.
 
 ## Installation
 
-To install the extension directly from GitHub:
+One command. Direct from GitHub.
+
 ```bash
 gemini extensions install https://github.com/sniperwolf/surgical-dev-extension
 ```
 
 ### Local Development (Optional)
-If you are developing or customizing the extension locally:
-1.  **Link the extension:**
-    ```bash
-    gemini extensions link YOUR_PATH_TO/surgical-dev-extension
-    ```
-2.  **Restart your session.**
+```bash
+gemini extensions link YOUR_PATH_TO/surgical-dev-extension
+```
+
+---
+
+**License**
+MIT © 2026 Fabrizio Fallico ([me@fabriziofallico.com](mailto:me@fabriziofallico.com))

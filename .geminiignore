@@ -1,0 +1,7 @@
+.github/
+assets/
+.git/
+.gitignore
+LICENSE
+README.md
+.geminiignore

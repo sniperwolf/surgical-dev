@@ -1,0 +1,37 @@
+name: Validate Extension
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Validate JSON Manifest
+        run: |
+          if ! jq . gemini-extension.json > /dev/null; then
+            echo "::error file=gemini-extension.json::Invalid JSON manifest detected."
+            exit 1
+          fi
+
+      - name: Verify Core Files
+        run: |
+          files=("GEMINI.md" "LICENSE" "README.md" "gemini-extension.json")
+          for file in "${files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "::error::Core file '$file' is missing."
+              exit 1
+            fi
+          done
+
+      - name: Verify Structure
+        run: |
+          if [ ! -d "skills" ] || [ ! -d "commands" ] || [ ! -d "agents" ]; then
+            echo "::error::Core directories (skills, commands, agents) are missing."
+            exit 1
+          fi
