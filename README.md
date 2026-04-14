@@ -9,10 +9,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/sniperwolf/surgical-dev-extension/stargazers"><img src="https://img.shields.io/github/stars/sniperwolf/surgical-dev-extension?style=flat&color=yellow" alt="Stars"></a>
-  <a href="https://github.com/sniperwolf/surgical-dev-extension/commits/main"><img src="https://img.shields.io/github/last-commit/sniperwolf/surgical-dev-extension?style=flat" alt="Last Commit"></a>
-  <a href="https://github.com/sniperwolf/surgical-dev-extension/issues"><img src="https://img.shields.io/github/issues/sniperwolf/surgical-dev-extension?style=flat&color=brightgreen" alt="Issues"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/sniperwolf/surgical-dev-extension?style=flat&color=blue" alt="License"></a>
+  <a href="https://github.com/sniperwolf/surgical-dev/stargazers"><img src="https://img.shields.io/github/stars/sniperwolf/surgical-dev?style=flat&color=yellow" alt="Stars"></a>
+  <a href="https://github.com/sniperwolf/surgical-dev/commits/main"><img src="https://img.shields.io/github/last-commit/sniperwolf/surgical-dev?style=flat" alt="Last Commit"></a>
+  <a href="https://github.com/sniperwolf/surgical-dev/issues"><img src="https://img.shields.io/github/issues/sniperwolf/surgical-dev?style=flat&color=brightgreen" alt="Issues"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/sniperwolf/surgical-dev?style=flat&color=blue" alt="License"></a>
   <a href="https://geminicli.com"><img src="https://img.shields.io/badge/Gemini%20CLI-Extension-orange?style=flat" alt="Gemini CLI"></a>
 </p>
 
@@ -88,12 +88,12 @@ Follow this workflow to maintain surgical-level discipline in every session.
 One command. Direct from GitHub.
 
 ```bash
-gemini extensions install https://github.com/sniperwolf/surgical-dev-extension
+gemini extensions install https://github.com/sniperwolf/surgical-dev
 ```
 
 ### Local Development (Optional)
 ```bash
-gemini extensions link YOUR_PATH_TO/surgical-dev-extension
+gemini extensions link YOUR_PATH_TO/surgical-dev
 ```
 
 ---
