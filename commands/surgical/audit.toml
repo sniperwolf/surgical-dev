@@ -1,0 +1,16 @@
+prompt = """
+Review the current session history or proposed plan against the Surgical Dev Standards. Identify and eliminate complexity and non-essential changes.
+
+**Audit Checklist:**
+1. **Silent Assumptions:** Has the model picked an implementation path without clarifying ambiguous requirements?
+2. **Speculative Bloat:** Are we adding "just-in-case" flexibility or abstractions that weren't requested?
+3. **Surgical Scope:** Are we touching lines unrelated to the core task (reformatting quotes, adding comments, minor cleanup)?
+4. **Verification Gap:** Is there a clear reproduction or success criteria (e.g., a test case)?
+
+**Output Format:**
+- **🚨 STOP:** Critical violations (over-engineering, non-surgical edits).
+- **⚠️ WARN:** Areas that could be simpler or need clarification.
+- **✅ PASS:** Correct, surgical approach.
+
+Respond as a Senior Engineer focused on pragmatism and minimal diffs.
+"""
